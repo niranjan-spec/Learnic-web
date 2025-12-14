@@ -20,14 +20,14 @@ const MyLearningsPage: React.FC = () => {
     }}>
       {/* Hero Banner */}
       <div
-        className="w-full py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
+        className="w-full py-8 md:py-12 lg:py-14 xl:py-16 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-24"
         style={{
           background: "linear-gradient(135deg, #572EEE 0%, #C084FC 70.71%)",
         }}
       >
         <div className="container mx-auto text-center">
           <h1
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-3 md:mb-4"
+            className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-3 md:mb-4"
             style={{
               ...typography.section.headingXl,
               color: colors.neutral.white,
@@ -38,7 +38,7 @@ const MyLearningsPage: React.FC = () => {
             My Learnings
           </h1>
           <p
-            className="text-base md:text-lg lg:text-xl"
+            className="text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-xl"
             style={{
               ...typography.section.descriptionLg,
               color: "rgba(255, 255, 255, 0.9)",
@@ -51,13 +51,13 @@ const MyLearningsPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-24 py-6 md:py-8 lg:py-10 xl:py-12">
         {/* Last Test Section */}
         <div className="mb-8 md:mb-12">
-          <div className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-6 xl:gap-8 items-start">
+          <div className="flex flex-col lg:flex-row gap-4 md:gap-5 lg:gap-5 xl:gap-6 2xl:gap-8 items-start">
             {/* Test Result Card */}
             <Card
-              className="w-full lg:w-[569px] lg:flex-shrink-0"
+              className="w-full lg:w-[500px] xl:w-[569px] lg:flex-shrink-0"
               style={{
                 height: "auto",
                 minHeight: "368px",
@@ -223,10 +223,10 @@ const MyLearningsPage: React.FC = () => {
             </Card>
 
             {/* Stats Cards - 2 Columns on Desktop: Top row 2 cards, Bottom row 1 card spanning full width */}
-            <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-4 lg:gap-3">
+            <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 min-w-0">
               {/* Top-left: My Classes */}
               <Card
-                className="w-full"
+                className="w-full min-w-0"
                 style={{
                   height: "auto",
                   minHeight: "171px",
@@ -238,19 +238,27 @@ const MyLearningsPage: React.FC = () => {
                   backgroundColor: colors.neutral.white,
                 }}
               >
-                <CardContent className="p-4 md:p-6 h-full flex items-center justify-between">
-                  <div className="flex items-center gap-3 md:gap-4">
+                <CardContent className="p-4 md:p-5 lg:p-5 xl:p-6 h-full flex items-center justify-between gap-3 md:gap-4 min-w-0">
+                  <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0 overflow-hidden">
                     <div
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                      className="w-12 h-12 flex-shrink-0 rounded-lg flex items-center justify-center"
                       style={{
                         backgroundColor: "#F3F0FF",
                       }}
                     >
-                      <BookOpen className="w-5 h-5 md:w-6 md:h-6" style={{ color: "#6B47ED" }} />
+                      <BookOpen 
+                        className="w-6 h-6 flex-shrink-0" 
+                        style={{ 
+                          color: "#6B47ED",
+                          strokeWidth: 1.5
+                        }} 
+                        stroke="#6B47ED"
+                        fill="none"
+                      />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0 overflow-hidden">
                       <div
-                        className="text-sm md:text-base"
+                        className="text-base truncate md:text-base lg:text-base"
                         style={{
                           ...typography.card.titleMd,
                           color: colors.text.primary,
@@ -262,7 +270,7 @@ const MyLearningsPage: React.FC = () => {
                         {stats[0].title}
                       </div>
                       <div
-                        className="text-xs md:text-sm"
+                        className="text-sm truncate md:text-sm lg:text-sm"
                         style={{
                           ...typography.card.bodySm,
                           color: colors.text.tertiary,
@@ -274,7 +282,7 @@ const MyLearningsPage: React.FC = () => {
                     </div>
                   </div>
                   <div
-                    className="text-2xl md:text-3xl lg:text-[32px]"
+                    className="text-[32px] flex-shrink-0 whitespace-nowrap"
                     style={{
                       ...typography.section.headingLg,
                       color: "#6B47ED",
@@ -289,7 +297,7 @@ const MyLearningsPage: React.FC = () => {
 
               {/* Top-right: My Videos */}
               <Card
-                className="w-full"
+                className="w-full min-w-0"
                 style={{
                   height: "auto",
                   minHeight: "171px",
@@ -301,19 +309,27 @@ const MyLearningsPage: React.FC = () => {
                   backgroundColor: colors.neutral.white,
                 }}
               >
-                <CardContent className="p-4 md:p-6 h-full flex items-center justify-between">
-                  <div className="flex items-center gap-3 md:gap-4">
+                <CardContent className="p-4 md:p-5 lg:p-5 xl:p-6 h-full flex items-center justify-between gap-3 md:gap-4 min-w-0">
+                  <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0 overflow-hidden">
                     <div
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                      className="w-12 h-12 flex-shrink-0 rounded-lg flex items-center justify-center"
                       style={{
                         backgroundColor: "#F3F0FF",
                       }}
                     >
-                      <Video className="w-5 h-5 md:w-6 md:h-6" style={{ color: "#6B47ED" }} />
+                      <Video 
+                        className="w-6 h-6 flex-shrink-0" 
+                        style={{ 
+                          color: "#6B47ED",
+                          strokeWidth: 1.5
+                        }} 
+                        stroke="#6B47ED"
+                        fill="none"
+                      />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0 overflow-hidden">
                       <div
-                        className="text-sm md:text-base"
+                        className="text-base truncate md:text-base lg:text-base"
                         style={{
                           ...typography.card.titleMd,
                           color: colors.text.primary,
@@ -325,7 +341,7 @@ const MyLearningsPage: React.FC = () => {
                         {stats[1].title}
                       </div>
                       <div
-                        className="text-xs md:text-sm"
+                        className="text-sm truncate md:text-sm lg:text-sm"
                         style={{
                           ...typography.card.bodySm,
                           color: colors.text.tertiary,
@@ -337,7 +353,7 @@ const MyLearningsPage: React.FC = () => {
                     </div>
                   </div>
                   <div
-                    className="text-2xl md:text-3xl lg:text-[32px]"
+                    className="text-[32px] flex-shrink-0 whitespace-nowrap"
                     style={{
                       ...typography.section.headingLg,
                       color: "#6B47ED",
@@ -365,19 +381,27 @@ const MyLearningsPage: React.FC = () => {
                     backgroundColor: colors.neutral.white,
                   }}
                 >
-                  <CardContent className="p-4 md:p-6 h-full flex items-center justify-between">
-                    <div className="flex items-center gap-3 md:gap-4">
+                  <CardContent className="p-4 md:p-5 lg:p-5 xl:p-6 h-full flex items-center justify-between gap-3 md:gap-4 min-w-0">
+                    <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0 overflow-hidden">
                       <div
-                        className="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                        className="w-12 h-12 flex-shrink-0 rounded-lg flex items-center justify-center"
                         style={{
                           backgroundColor: "#F3F0FF",
                         }}
                       >
-                        <ClipboardList className="w-5 h-5 md:w-6 md:h-6" style={{ color: "#6B47ED" }} />
+                        <ClipboardList 
+                          className="w-6 h-6 flex-shrink-0" 
+                          style={{ 
+                            color: "#6B47ED",
+                            strokeWidth: 1.5
+                          }} 
+                          stroke="#6B47ED"
+                          fill="none"
+                        />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0 overflow-hidden">
                         <div
-                          className="text-sm md:text-base"
+                          className="text-base truncate md:text-base lg:text-base"
                           style={{
                             ...typography.card.titleMd,
                             color: colors.text.primary,
@@ -389,7 +413,7 @@ const MyLearningsPage: React.FC = () => {
                           {stats[2].title}
                         </div>
                         <div
-                          className="text-xs md:text-sm"
+                          className="text-sm truncate md:text-sm lg:text-sm"
                           style={{
                             ...typography.card.bodySm,
                             color: colors.text.tertiary,
@@ -401,7 +425,7 @@ const MyLearningsPage: React.FC = () => {
                       </div>
                     </div>
                     <div
-                      className="text-2xl md:text-3xl lg:text-[32px]"
+                      className="text-[32px] flex-shrink-0 whitespace-nowrap"
                       style={{
                         ...typography.section.headingLg,
                         color: "#6B47ED",
@@ -444,7 +468,7 @@ const MyLearningsPage: React.FC = () => {
               View All
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-4 lg:gap-5 xl:gap-6">
             {classes.map((classItem) => (
               <Card key={classItem.id} style={{ boxShadow: shadows.cardSoft }}>
                 <CardContent className="p-0">
@@ -581,7 +605,7 @@ const MyLearningsPage: React.FC = () => {
               View All
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-4 lg:gap-5 xl:gap-6">
             {videos.map((video) => (
               <Link key={video.id} href={`/videos/${video.id}`} className="block">
                 <Card style={{ boxShadow: shadows.cardSoft, cursor: "pointer" }}>
@@ -703,7 +727,7 @@ const MyLearningsPage: React.FC = () => {
               View All
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-6 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4 md:gap-4 lg:gap-5 xl:gap-6 w-full">
             {testSeries.map((test) => (
               <Link key={test.id} href={`/test-series/${test.id}`}>
                 <Card style={{ boxShadow: shadows.cardSoft }}>
